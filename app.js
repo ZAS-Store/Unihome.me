@@ -13,6 +13,8 @@ app.set('ip', process.env.IP);
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(__dirname + '/Site'));
 
+
+
 var port = process.env.PORT || 8080;
 app.get('/', function(req, res) {
   res.sendFile(__dirname+'/Site/index.html');
