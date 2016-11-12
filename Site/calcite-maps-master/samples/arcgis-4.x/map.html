@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <meta name="description" content="Calcite Maps Demo - ArcGIS">
-  <link rel="icon" href="http://www.esri.com/favicon.ico">
-  <title>Calcite Maps - ArcGIS 4.x 2D - 3D</title>
+  <meta name="description" content="YHack Map Demo">
+  <link rel="icon" href="img/blueYHackLogo.png">
+  <title> YHack 2016 | Map Demo </title>
 
   <!-- Calcite Bootstrap -->
   <link rel="stylesheet" href="../../dist/css/calcite-bootstrap.min-v0.2.css">
@@ -53,14 +53,14 @@
     </div>
     <!-- Title -->
     <div class="calcite-title calcite-overflow-hidden">
-      <span class="calcite-title-main">Calcite Maps</span>
+      <span class="calcite-title-main">Team X Map</span>
       <span class="calcite-title-divider hidden-xs"></span>
-      <span class="calcite-title-sub hidden-xs">Starter app for the ArcGIS API for JS 4.x (dojo)</span> 
+      <span class="calcite-title-sub hidden-xs">Student Housing Map near Universities 1.0</span> 
     </div>
      <!-- Nav -->
     <ul class="calcite-nav nav navbar-nav">                    
-      <li><a id="mapNav" class="hidden-xs hidden-sm" href="#2dTab" aria-controls="2Dtab" aria-expanded="true" role="tab" data-toggle="tab" data-tooltip="tip" title="2D View" data-placement="bottom">Map</a></li>
-      <li class="active"><a id="sceneNav" class="hidden-xs hidden-sm" href="#3dTab" aria-controls="3Dtab" role="tab" data-toggle="tab" data-tooltip="tip" title="3D View" data-placement="bottom">Scene</a></li>                  
+      <li><a id="mapNav" class="hidden-xs hidden-sm" href="#2dTab" aria-controls="2Dtab" aria-expanded="true" role="tab" data-toggle="tab" data-tooltip="tip" title="2D View" data-placement="bottom">2D Map</a></li>
+      <li class="active"><a id="sceneNav" class="hidden-xs hidden-sm" href="#3dTab" aria-controls="3Dtab" role="tab" data-toggle="tab" data-tooltip="tip" title="3D View" data-placement="bottom">3D Map</a></li>                  
       <li><div class="calcite-navbar-search calcite-search-expander"><div id="searchNavDiv"></div></div></li>
     </ul>
   </nav><!--/.navbar -->
@@ -93,20 +93,17 @@
       </div>
       <div id="collapseInfo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingInfo">
         <div class="panel-body">
-          <p>The main styles used in this app are:</p>
-          Body
-          <li>calcite-nav-top</li>
+          <p>The main functionalities of this map: </p>
+          Customizable House Searching
+          <li>Distance </li>
+          <li>Time </li>
+          <li>Crime Rate </li>
+          <li> Demographics </li>
           <br>
-          Nav
-          <li>calcite-bgcolor-dark-blue</li>
-          <li>calcite-text-light</li>
+          Different Basemaps
+          <li> Currently supporting 10 types</li>
+          <li> Ex: Satellite, Hybrid, ... </li>
           <br>
-          Dropdown
-          <li>calcite-menu-drawer</li>
-          <br>
-          Panels
-          <li>calcite-panels-right</li>
-          <li>calcite-bg-custom</li>
         </div>
      </div>
     </div>
@@ -242,7 +239,17 @@
             view: app.activeView,
             highlightEnabled: false,
             popupEnabled: true,
-            showPopupOnSelect: true
+            showPopupOnSelect: true,
+            allPlaceholder: "Input School Name",
+            searchAllEnabled: true,
+            sources: [
+                {declaredClass:"Education"},
+                {name:"College"}, 
+                {name:"Fine Arts School"},
+                {name:"Other Education"},
+                {name:"School"},
+                {name:"Vocational School"}
+            ]
           }
           }, parentId);
         search.startup();
