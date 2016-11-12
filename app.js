@@ -6,8 +6,8 @@ var http = require('http');
 var dns = require('dns');
 var cors = require('cors');
 var path = require('path');
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
+var ArcGIS = require('arcgis')
+var arcgis = ArcGIS()
 
 app.set('ip', process.env.IP);
 app.set('views', path.join(__dirname, 'views'));
