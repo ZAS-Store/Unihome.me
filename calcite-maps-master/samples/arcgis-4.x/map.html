@@ -248,7 +248,7 @@
           featureLayer: new FeatureLayer({
             url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/ArcGIS/rest/services/Schools/FeatureServer/0",
             popupTemplate: { // autocasts as new popupTemplate()
-              title: "{CONAME} </br> {STREET}, {CITY}, {STATE_NAME} </br> Available Housing: {EMPNUM}0 </br> Safety: {SCORE}%",
+              title: "{CONAME} </br> {STREET}, {CITY}, {STATE_NAME} </br> Available Housing:" + Math.floor(Math.random() * 20 + 3).toString()  + "</br> Safety: {SCORE}%" + "<br>" + queryListing("{STREET}"),
               overwriteActions: true
             }
           }),
@@ -279,6 +279,14 @@
         }
       }
 
+    function queryListing(Street) {
+        var num1, num2, num3
+        num1 = Math.floor(Math.random() * 10).toString(); 
+        num2 = Math.floor(Math.random() * 15).toString(); 
+        num3 = Math.floor(Math.random() * 30).toString(); 
+        return ("<a href='http://www.google.ca'>" + Street + " House " + num1 + "</a> </br>" + Street + " House " + num2 + "</br>" + Street + " House " + num3)
+    }    
+        
       // Popups - Listen to popup changes to show/hide panels
       app.mapView.popup.watch(["visible", "currentDockPosition"], setPanelVisibility);
       app.sceneView.popup.watch(["visible", "currentDockPosition"], setPanelVisibility);
