@@ -6,6 +6,7 @@ var http = require('http');
 var dns = require('dns');
 var cors = require('cors');
 var path = require('path');
+var harps = require('harp');
 var ArcGIS = require('arcgis')
 var arcgis = ArcGIS()
 
@@ -21,4 +22,4 @@ app.get('/', function(req, res) {
 });
 
 app.listen(port);
-console.log('Magic happens on port ' + port);
+console.log('Check site on port ' + port);
