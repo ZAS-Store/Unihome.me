@@ -1,0 +1,19 @@
+{
+  "name": "studenthouse",
+  "version": "1.0.0",
+  "description": "studenthouse",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vincentt117/StudenHouse.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vincentt117/StudenHouse/issues"
+  },
+  "homepage": "https://github.com/vincentt117/StudenHouse#readme"
+}
