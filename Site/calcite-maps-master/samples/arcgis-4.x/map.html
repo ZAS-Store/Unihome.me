@@ -248,15 +248,16 @@
           featureLayer: new FeatureLayer({
             url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/ArcGIS/rest/services/Schools/FeatureServer/0",
             popupTemplate: { // autocasts as new popupTemplate()
-              title: "School {CONAME} </br>{STREET}, {CITY}, {STATE_NAME}",
+              title: "{CONAME} </br> {STREET}, {CITY}, {STATE_NAME} </br> Available Housing: {EMPNUM}0 </br> Safety: {SCORE}%",
               overwriteActions: true
             }
           }),
           searchFields: ["CONAME", "CITY"],
           suggestionTemplate: "{CONAME}, {CITY}, {STATE_NAME}",
           exactMatch: false,
-          outFields: ["CONAME", "CITY", "STATE_NAME"],
+          outFields: ["CONAME", "STREET", "CITY", "STATE_NAME", "EMPNUM", "SCORE"],
           name: "Schools",
+          placeholder: "Input School Name",
         }
         ]
           }
@@ -354,6 +355,9 @@
           app.searchWidgetNav.search(app.searchWidgetNav.selectedResult.name);
         }
         app.activeView.popup.reposition();
+        geometryEngine.geodesicBuffer(0, [
+            1000
+          ], "meters", true);
       }
 
       // Basemap events
