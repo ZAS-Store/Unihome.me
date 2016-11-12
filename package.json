@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "deploy": "gh-pages -d Site"
+    "deploy": "gh-pages -d"
   },
   "repository": {
     "type": "git",
