@@ -4,7 +4,8 @@
   "description": "studenthouse",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "deploy": "gh-pages -d Site"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "homepage": "https://github.com/vincentt117/StudenHouse#readme",
   "dependencies": {
     "hexo-deployer-git": "^0.2.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^0.11.0"
   }
 }
