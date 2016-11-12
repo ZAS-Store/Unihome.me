@@ -161,6 +161,8 @@
       "esri/views/MapView",
       "esri/views/SceneView",
       "esri/widgets/Search",
+      "esri/layers/FeatureLayer",
+      "esri/symbols/PictureMarkerSymbol",
       "esri/core/watchUtils",
       "dojo/query",
 
@@ -172,7 +174,7 @@
       // Calcite-maps
       "calcite-maps/calcitemaps-v0.2",
       "dojo/domReady!"
-    ], function(Map, Basemap, MapView, SceneView, Search, watchUtils, query) {
+    ], function(Map, Basemap, MapView, SceneView, Search, FeatureLayer, PictureMarkerSymbol, watchUtils, query) {
         
       // App
       app = {
@@ -241,7 +243,22 @@
             popupEnabled: true,
             showPopupOnSelect: true,
             allPlaceholder: "Input School Name",
-            searchAllEnabled: true
+            searchAllEnabled: true,
+              sources:[{
+          featureLayer: new FeatureLayer({
+            url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/ArcGIS/rest/services/Schools/FeatureServer/0",
+            popupTemplate: { // autocasts as new popupTemplate()
+              title: "School {CONAME} </br>{STREET}, {CITY}, {STATE_NAME}",
+              overwriteActions: true
+            }
+          }),
+          searchFields: ["CONAME", "CITY"],
+          suggestionTemplate: "{CONAME}, {CITY}, {STATE_NAME}",
+          exactMatch: false,
+          outFields: ["CONAME", "CITY", "STATE_NAME"],
+          name: "Schools",
+        }
+        ]
           }
           }, parentId);
         search.startup();
