@@ -5,18 +5,18 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "deploy": "gh-pages -d"
+    "deploy": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vincentt117/StudenHouse.git"
+    "url": "git+https://github.com/vincentt117/Home.Me.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vincentt117/StudenHouse/issues"
+    "url": "https://github.com/vincentt117/Home.Me/issues"
   },
-  "homepage": "https://github.com/vincentt117/StudenHouse#readme",
+  "homepage": "https://github.com/vincentt117/Home.Me#readme",
   "dependencies": {
     "hexo-deployer-git": "^0.2.0"
   },
