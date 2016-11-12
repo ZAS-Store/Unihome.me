@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/vincentt117/StudenHouse/issues"
   },
-  "homepage": "https://github.com/vincentt117/StudenHouse#readme"
+  "homepage": "https://github.com/vincentt117/StudenHouse#readme",
+  "dependencies": {
+    "hexo-deployer-git": "^0.2.0"
+  }
 }
