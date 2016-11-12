@@ -302,7 +302,7 @@ section.cta {
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
-  background-image: url('../img/bg-cta.jpg');
+  background-image: url("https://9to5mac.files.wordpress.com/2016/06/sierra.jpg");
   padding: 250px 0;
 }
 section.cta .cta-content {
