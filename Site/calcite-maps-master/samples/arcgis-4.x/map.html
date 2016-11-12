@@ -248,7 +248,7 @@
           featureLayer: new FeatureLayer({
             url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/ArcGIS/rest/services/Schools/FeatureServer/0",
             popupTemplate: { // autocasts as new popupTemplate()
-              title: "{CONAME} </br> {STREET}, {CITY}, {STATE_NAME} </br> Available Housing: {EMPNUM}0 </br> Safety: {SCORE}%",
+              title: "{CONAME} </br> {STREET}, {CITY}, {STATE_NAME} </br> Available Housing: {EMPNUM}0 </br> Safety: {SCORE}% </br>" + queryHousing("{STREET}","{CITY}"),
               overwriteActions: true
             }
           }),
@@ -277,6 +277,14 @@
           app.screenWidth = screenSize[0];
           setPanelVisibility();
         }
+      }
+    
+      function queryHousing(Street, City) {
+          var num1, num2, num3
+          num1 = Math.floor(Math.random() * 10); 
+          num2 = Math.floor(Math.random() * 15); 
+          num3 = Math.floor(Math.random() * 30); 
+          return (Street + " " + City + " House " + num1.toString() + "<br>" + Street + " " + City + " House " + num2.toString() + "<br>" + Street + " " + City + " House " + num3.toString()  + "<br>")
       }
 
       // Popups - Listen to popup changes to show/hide panels
