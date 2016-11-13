@@ -248,7 +248,7 @@
           featureLayer: new FeatureLayer({
             url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/ArcGIS/rest/services/Schools/FeatureServer/0",
             popupTemplate: { // autocasts as new popupTemplate()
-              title: "{CONAME} </br> {STREET}, {CITY}, {STATE_NAME} </br> Available Housing:" + Math.floor(Math.random() * 20 + 3).toString()  + "</br> Safety: {SCORE}%" + "<br>" + queryListing("{STREET}"),
+              title: "{CONAME} </br> {STREET}, {CITY}, {STATE_NAME} </br> Available Housing:" + Math.floor(Math.random() * 100 + 3).toString()  + "</br> Safety: {SCORE}%" + "</br> Average Prices: 800$" + "</br>" + queryListing("{STREET}")+"<a href= #>...</a></br>",
               overwriteActions: true,
               visible:false
             }
