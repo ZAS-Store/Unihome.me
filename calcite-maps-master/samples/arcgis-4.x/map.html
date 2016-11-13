@@ -157,6 +157,7 @@
     var app;
 
     require(["esri/Map",
+      "esri/geometry/Extent",
       "esri/Basemap",
       "esri/views/MapView",
       "esri/views/SceneView",
@@ -174,14 +175,15 @@
       // Calcite-maps
       "calcite-maps/calcitemaps-v0.2",
       "dojo/domReady!"
-    ], function(Map, Basemap, MapView, SceneView, Search, FeatureLayer, PictureMarkerSymbol, watchUtils, query) {
+    ], function(Map, Extent, Basemap, MapView, SceneView, Search, FeatureLayer, PictureMarkerSymbol, watchUtils, query) {
         
       // App
       app = {
-        scale: 50000000,
-        center: [-40,40],
-        initialExtent: null,
-        basemap: "satellite",
+        //scale:100000,
+        scale: 12000000,
+        center: [-100,40],
+        initialExtent: null,//new Extent(-200000, -200000, 500000, 500000),
+        basemap: "osm",
         viewPadding: {
           top: 50, bottom: 0
         },
@@ -196,7 +198,9 @@
 
       // Map 
       var map = new Map({
-        basemap: app.basemap
+        basemap: app.basemap,
+        extent: app.initialExtent,
+        fitExtent: true
       });
       app.mapView = new MapView({
         container: "mapViewDiv",
